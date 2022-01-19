@@ -2,14 +2,14 @@ _format_version: "2.1"
 _transform: true
 
 services:
-- name: client
-  url: http://client-ms/
-#  plugins:
-#  - name: key-auth
-  routes:
   - name: client
-    paths:
-    - /
+    url: http://client-ms/
+  #  plugins:
+  #  - name: key-auth
+    routes:
+    - name: client
+      paths:
+      - /client
 
 consumers:
 - username: my-user

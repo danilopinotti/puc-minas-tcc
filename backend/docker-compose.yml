@@ -34,9 +34,21 @@ services:
       image: webdevops/php-nginx:8.0-alpine
       command: sh -c "sleep 5; php /app/artisan rabbitmq:consume"
       depends_on:
-      - rabbitmq
+        - rabbitmq
       volumes:
         - ./client-ms:/app
+      networks:
+        - ms-network
+    client-db:
+      image: postgres:13-alpine
+      volumes:
+        - client-postgres-data:/var/lib/postgresql/data
+      ports:
+        - "5432:5432"
+      environment:
+        - POSTGRES_DB=client
+        - POSTGRES_USER=client
+        - POSTGRES_PASSWORD=client
       networks:
         - ms-network
     rabbitmq:
@@ -49,6 +61,11 @@ services:
         - "8081:15672"
       networks:
         - ms-network
+
+volumes:
+  client-postgres-data:
+    driver: local
+
 networks:
   ms-network:
     driver: bridge
