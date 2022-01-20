@@ -30,7 +30,6 @@ class PackagesSeeder extends Seeder
         $trackings = $package->trackings();
         $trackingFactory = PackageTrackFactory::new();
 
-
         $trackings->create([
             'status' => 'Pacote recebido pelo Centro de Distribuição.'
         ]);
