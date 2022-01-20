@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class PackageTrack extends Model
 {
-    protected $table = 'packages_trackings';
-
     use HasFactory;
+
+    protected $table = 'packages_trackings';
+    protected $fillable = ['status', 'package_id'];
 }

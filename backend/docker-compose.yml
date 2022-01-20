@@ -23,7 +23,7 @@ services:
       image: webdevops/php-nginx:8.0-alpine
       working_dir: /app
       deploy:
-        replicas: 5
+        replicas: 2
       volumes:
         - ./client-ms:/app
       environment:
