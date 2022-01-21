@@ -30,3 +30,8 @@ Route::get(
     '/packages/{package_code}/track',
     [\App\Http\Controllers\PackagesController::class, 'track']
 );
+
+Route::post(
+    '/freight/calculate',
+    [\App\Http\Controllers\FreightController::class, 'calculate']
+);
