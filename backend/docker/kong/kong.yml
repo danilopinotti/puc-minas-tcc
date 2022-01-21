@@ -11,11 +11,17 @@ services:
         paths:
           - /client
   - name: data-science-bi
-    url: http://data-science-bi-ms/
+    url: http://data-science-bi/
     routes:
       - name: data-science-bi
         paths:
           - /data-science-bi
+  - name: strategic-management
+    url: http://strategic-management/
+    routes:
+      - name: strategic-management
+        paths:
+          - /strategic-management
   - name: registration-information
     url: http://registration-information-ms/
     routes:

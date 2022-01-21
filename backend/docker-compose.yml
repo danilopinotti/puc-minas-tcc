@@ -80,6 +80,16 @@ services:
         - ./data-science-bi-ms:/app
       networks:
         - ms-network
+    strategic-management:
+      image: webdevops/php-nginx:8.0-alpine
+      depends_on:
+        - rabbitmq
+      volumes:
+        - ./strategic-management-ms:/app
+      environment:
+        - WEB_DOCUMENT_ROOT=/app/public
+      networks:
+        - ms-network
     rabbitmq:
       image: rabbitmq:3-management-alpine
       environment:
