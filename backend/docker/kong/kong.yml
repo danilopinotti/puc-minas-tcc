@@ -4,19 +4,25 @@ _transform: true
 services:
   - name: client
     url: http://client-ms/
-  #  plugins:
-  #  - name: key-auth
+    #  plugins:
+    #  - name: key-auth
     routes:
-    - name: client
-      paths:
-      - /client
+      - name: client
+        paths:
+          - /client
   - name: data-science-bi
-    url: http://data-science-bi/
+    url: http://data-science-bi-ms/
     routes:
-    - name: data-science-bi
-      paths:
-      - /data-science-bi
+      - name: data-science-bi
+        paths:
+          - /data-science-bi
+  - name: registration-information
+    url: http://registration-information-ms/
+    routes:
+      - name: registration-information
+        paths:
+          - /registration-information
 consumers:
-- username: my-user
+  - username: my-user
 #  keyauth_credentials:
 #  - key: my-key

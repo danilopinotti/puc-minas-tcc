@@ -34,12 +34,31 @@ services:
       image: postgres:13-alpine
       volumes:
         - client-postgres-data:/var/lib/postgresql/data
-      ports:
-        - "5432:5432"
       environment:
         - POSTGRES_DB=client
         - POSTGRES_USER=client
         - POSTGRES_PASSWORD=client
+      networks:
+        - ms-network
+    registration-information-ms:
+      image: webdevops/php-nginx:8.0-alpine
+      working_dir: /app
+      deploy:
+        replicas: 2
+      volumes:
+        - ./registration-information-ms:/app
+      environment:
+        - WEB_DOCUMENT_ROOT=/app/public
+      networks:
+        - ms-network
+    registration-information-db:
+      image: postgres:13-alpine
+      volumes:
+        - registration-information-postgres-data:/var/lib/postgresql/data
+      environment:
+        - POSTGRES_DB=registration-information
+        - POSTGRES_USER=registration-information
+        - POSTGRES_PASSWORD=registration-information
       networks:
         - ms-network
     data-science-bi:
@@ -74,6 +93,8 @@ services:
 
 volumes:
   client-postgres-data:
+    driver: local
+  registration-information-postgres-data:
     driver: local
 
 networks:
