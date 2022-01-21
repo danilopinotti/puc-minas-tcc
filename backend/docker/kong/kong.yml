@@ -10,7 +10,12 @@ services:
     - name: client
       paths:
       - /client
-
+  - name: data-science-bi
+    url: http://data-science-bi/
+    routes:
+    - name: data-science-bi
+      paths:
+      - /data-science-bi
 consumers:
 - username: my-user
 #  keyauth_credentials:

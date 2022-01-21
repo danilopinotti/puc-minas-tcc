@@ -23,22 +23,11 @@ services:
       image: webdevops/php-nginx:8.0-alpine
       working_dir: /app
       deploy:
-        replicas: 1
-      ports:
-        - "8080:80"
+        replicas: 2
       volumes:
         - ./client-ms:/app
       environment:
         - WEB_DOCUMENT_ROOT=/app/public
-      networks:
-        - ms-network
-    client-worker:
-      image: webdevops/php-nginx:8.0-alpine
-      command: sh -c "sleep 5; php /app/artisan rabbitmq:consume"
-      depends_on:
-        - rabbitmq
-      volumes:
-        - ./client-ms:/app
       networks:
         - ms-network
     client-db:
@@ -51,6 +40,25 @@ services:
         - POSTGRES_DB=client
         - POSTGRES_USER=client
         - POSTGRES_PASSWORD=client
+      networks:
+        - ms-network
+    data-science-bi:
+      image: webdevops/php-nginx:8.0-alpine
+      depends_on:
+        - rabbitmq
+      volumes:
+        - ./data-science-bi-ms:/app
+      environment:
+        - WEB_DOCUMENT_ROOT=/app/public
+      networks:
+        - ms-network
+    data-science-bi-worker:
+      image: webdevops/php-nginx:8.0-alpine
+      command: sh -c "sleep 5; php /app/artisan rabbitmq:consume"
+      depends_on:
+        - rabbitmq
+      volumes:
+        - ./data-science-bi-ms:/app
       networks:
         - ms-network
     rabbitmq:
