@@ -20,3 +20,5 @@ Route::get('/', function () {
         'service' => 'registration-information-ms',
     ]);
 });
+
+Route::apiResource('suppliers', \App\Http\Controllers\SupplierController::class);
