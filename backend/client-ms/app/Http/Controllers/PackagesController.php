@@ -12,6 +12,7 @@ class PackagesController
     public function index()
     {
         $packages = Package::paginate();
+        $packages->withPath(request()->header('x-forwarded-path'));
         return PackageResource::collection($packages);
     }
     public function track(string $packageCode)
