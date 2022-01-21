@@ -14,16 +14,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
 Route::get('/', function () {
     return response()->json([
         'status' => 'ok',
         'service' => 'client-ms',
     ]);
 });
+
+Route::get(
+    '/packages',
+    [\App\Http\Controllers\PackagesController::class, 'index']
+);
 
 Route::get(
     '/packages/{package_code}/track',

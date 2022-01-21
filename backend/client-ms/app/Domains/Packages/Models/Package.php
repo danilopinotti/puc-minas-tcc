@@ -11,6 +11,12 @@ class Package extends Model
     use HasFactory;
 
     protected $fillable = ['is_delivered'];
+    protected $casts = [
+        'height' => 'float',
+        'width' => 'float',
+        'length' => 'float',
+        'weight' => 'float',
+    ];
 
     public function trackings()
     {

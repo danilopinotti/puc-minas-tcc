@@ -3,10 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Domains\Packages\Actions\GetPackageTracking;
+use App\Domains\Packages\Models\Package;
+use App\Http\Resources\PackageResource;
 use App\Http\Resources\PackageTrackResource;
 
 class PackagesController
 {
+    public function index()
+    {
+        $packages = Package::paginate();
+        return PackageResource::collection($packages);
+    }
     public function track(string $packageCode)
     {
         $trackEntries = app(GetPackageTracking::class)
