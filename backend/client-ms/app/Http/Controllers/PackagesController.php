@@ -27,8 +27,10 @@ class PackagesController
             ], 404);
         }
 
+
         return [
             'packageCode' => $packageCode,
+            'isDelivered' => $trackEntries->first()->package->is_delivered,
             'track' => PackageTrackResource::collection($trackEntries),
         ];
     }

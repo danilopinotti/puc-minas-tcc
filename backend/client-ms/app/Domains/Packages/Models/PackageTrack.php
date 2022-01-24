@@ -11,4 +11,9 @@ class PackageTrack extends Model
 
     protected $table = 'packages_trackings';
     protected $fillable = ['status', 'package_id'];
+
+    public function package()
+    {
+        return $this->belongsTo(Package::class);
+    }
 }
