@@ -13,15 +13,15 @@
 
         <!-- nav - start -->
         <nav class="hidden lg:flex gap-12">
-          <a href="#"
+          <NuxtLink to="/"
              class="text-gray-600 hover:text-indigo-500 active:text-indigo-700 text-lg font-semibold transition duration-100">Página
-            Inicial</a>
-          <a href="#"
+            Inicial</NuxtLink>
+          <NuxtLink to="/package-track"
              class="text-gray-600 hover:text-indigo-500 active:text-indigo-700 text-lg font-semibold transition duration-100">Rastrear
-            Pacotes</a>
-          <a href="#"
+            Pacotes</NuxtLink>
+           <NuxtLink to="/simulate"
              class="text-gray-600 hover:text-indigo-500 active:text-indigo-700 text-lg font-semibold transition duration-100">Calcular
-            Frete</a>
+            Frete</NuxtLink>
         </nav>
         <!-- nav - end -->
 
