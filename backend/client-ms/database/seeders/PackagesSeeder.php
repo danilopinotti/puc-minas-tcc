@@ -17,7 +17,7 @@ class PackagesSeeder extends Seeder
     {
         $packages = Package::factory(10)->create();
         foreach ($packages as $package) {
-            $isDelivered = (bool)random_int(0, 1);
+            $isDelivered = (bool) random_int(0, 1);
             $this->addPackageTrackings($package, $isDelivered);
             $package->update(['is_delivered' => $isDelivered]);
         }

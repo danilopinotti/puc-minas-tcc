@@ -34,6 +34,12 @@
             </form>
           </div>
         </div>
+        <PackageTrack v-if="packageResponse"
+                      :package-code="packageResponse.packageCode"
+                      :is-delivered="packageResponse.isDelivered"
+                      :tracks="packageResponse.track"
+        >
+        </PackageTrack>
       </div>
     </div>
   </div>
@@ -55,12 +61,18 @@ export default {
   methods: {
     trackPackage() {
       this.isLoading = true;
+      this.packageResponse = undefined;
+      this.$axios.get('client/packages/' + this.packageCode + '/track')
+        .then((response) => {
+          if (!response || !response.data) {
+            return;
+          }
 
-      let url = 'client/packages/' + this.packageCode + '/track';
-      this.$axios.get(url)
-      .finally(() => {
-        this.isLoading = false;
-      })
+          this.packageResponse = response.data;
+        })
+        .finally(() => {
+          this.isLoading = false;
+        })
     }
   }
 }
