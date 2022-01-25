@@ -15,8 +15,15 @@ class CalculatePrice
         $widthCm = $packageData['widthCm'];
         $lengthCm = $packageData['lengthCm'];
 
-        return round(($weightG*$heightCm*$widthCm*$lengthCm)/100000*0.54, 2);
+        $md5Route = md5($packageData['origin'] . $packageData['destination']);
+        $routeFactor = preg_replace('/[^0-9.]+/', '', $md5Route)%100/100 + 1;
 
-        return 0;
+        $price = round(($weightG*$heightCm*$widthCm*$lengthCm)/100000*0.20*$routeFactor, 2);
+
+        if ($price < 10) {
+            return 10 + $price;
+        }
+
+        return $price;
     }
 }

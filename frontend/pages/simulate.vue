@@ -1,5 +1,7 @@
 <template>
-  <div>Simulação de frete</div>
+  <div>
+    <FreightSimulate></FreightSimulate>
+  </div>
 </template>
 
 <script>
