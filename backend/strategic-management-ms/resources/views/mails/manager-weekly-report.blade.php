@@ -3,7 +3,7 @@
 
 Olá,
 
-Segue anexo o relatório gerencial semanal referente à semana {{now()->startOfWeek()->format('d/m/Y')}} - {{now()->endOfWeek()->format('d/m/Y')}}
+Segue anexo o relatório gerencial referente à semana {{now()->startOfWeek()->format('d/m/Y')}} - {{now()->endOfWeek()->format('d/m/Y')}}
 
 Obrigado,<br>
 Boa Entrega.
