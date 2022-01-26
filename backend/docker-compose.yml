@@ -80,6 +80,14 @@ services:
       - ./data-science-bi-ms:/app
     networks:
       - ms-network
+  legacy-communication:
+    image: webdevops/php-nginx:8.0-alpine
+    volumes:
+      - ./legacy-communication-ms:/app
+    environment:
+      - WEB_DOCUMENT_ROOT=/app/public
+    networks:
+      - ms-network
   strategic-management:
     image: webdevops/php-nginx:8.0-alpine
     working_dir: /app
