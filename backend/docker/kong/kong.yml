@@ -51,6 +51,21 @@ plugins:
       credentials: true
       max_age: 3600
       preflight_continue: false
+  - name: cors
+    service: registration-information
+    config:
+      origins:
+        - http://localhost:3000
+      methods:
+        - GET
+        - POST
+      headers:
+        - "*"
+      exposed_headers:
+        - X-Auth-Token
+      credentials: true
+      max_age: 3600
+      preflight_continue: false
 consumers:
   - username: my-user
 #  keyauth_credentials:

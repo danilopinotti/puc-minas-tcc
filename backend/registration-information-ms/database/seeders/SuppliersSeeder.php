@@ -2,9 +2,11 @@
 
 namespace Database\Seeders;
 
+use App\Models\User;
+use Database\Factories\SupplierFactory;
 use Illuminate\Database\Seeder;
 
-class DatabaseSeeder extends Seeder
+class SuppliersSeeder extends Seeder
 {
     /**
      * Seed the application's database.
@@ -13,7 +15,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        app(UsersSeeder::class)->run();
-        app(SuppliersSeeder::class)->run();
+       SupplierFactory::new()->count(10)->create();
     }
 }

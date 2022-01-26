@@ -9,7 +9,7 @@
           Boa Entrega
         </a>
 
-        <nav class="hidden lg:flex gap-12">
+        <nav class="hidden lg:flex gap-12" :key="headerKey">
           <NuxtLink to="/"
                     class="text-gray-600 hover:text-indigo-500 active:text-indigo-700 text-lg font-semibold transition duration-100">
             Página Inicial
@@ -22,9 +22,16 @@
                     class="text-gray-600 hover:text-indigo-500 active:text-indigo-700 text-lg font-semibold transition duration-100">
             Calcular Frete
           </NuxtLink>
+
+          <NuxtLink v-if="$auth.loggedIn"
+                to="/suppliers"
+                class="text-gray-600 hover:text-indigo-500 active:text-indigo-700 text-lg font-semibold transition duration-100">
+            Fornecedores
+          </NuxtLink>
         </nav>
 
-        <div class="hidden lg:flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5 -ml-8">
+        <div v-if="!$auth.loggedIn"
+             class="hidden lg:flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5 -ml-8">
           <NuxtLink to="/login"
                     class="inline-block focus-visible:ring ring-indigo-300 text-gray-500 hover:text-indigo-500 active:text-indigo-600 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-4 py-3">
             Entrar
@@ -34,6 +41,20 @@
              class="inline-block bg-indigo-500 hover:bg-indigo-600 active:bg-indigo-700 focus-visible:ring ring-indigo-300 text-white text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3">
             Cadastrar
           </a>
+        </div>
+        <div v-else>
+          <div class="dropdown">
+            <div tabindex="0"
+                 class="inline-block focus-visible:ring ring-indigo-300 text-gray-500 hover:text-indigo-500 active:text-indigo-600 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-4 py-3 cursor-pointer">
+              {{ $auth.user.name }}
+            </div>
+            <ul tabindex="0" class="p-2 shadow menu dropdown-content bg-base-100 rounded-box w-52">
+              <li>
+                <a @click.prevent="logout">Desconectar</a>
+              </li>
+            </ul>
+          </div>
+
         </div>
 
         <button type="button"
@@ -52,7 +73,21 @@
 
 <script>
 export default {
-  name: "Header"
+  name: "Header",
+  data() {
+    return {
+      headerKey: 0,
+    }
+  },
+  methods: {
+    async logout() {
+      this.$nuxt.$loading.start();
+      await this.$auth.logout();
+      this.$nuxt.$loading.finish();
+      this.headerKey++;
+      this.$router.push('/');
+    }
+  },
 }
 </script>
 

@@ -8,19 +8,23 @@
     </div>
 
     <div class="mt-4">
-      <form action="#">
+      <form @submit.prevent="login">
         <div class="form-control mb-6">
           <label class="label">
             <span class="label-text">Email</span>
           </label>
-          <input type="email" placeholder="usuario@boaentrega.com.br" class="input input-bordered">
+          <input type="email"
+                 v-model="form.email"
+                 placeholder="usuario@boaentrega.com.br" class="input input-bordered">
         </div>
 
         <div class="form-control mb-6">
           <label class="label">
             <span class="label-text">Senha</span>
           </label>
-          <input type="password" placeholder="entre com sua senha" class="input input-bordered">
+          <input type="password"
+                 v-model="form.password"
+                 placeholder="entre com sua senha" class="input input-bordered">
         </div>
 
         <div class="flex w-full">
@@ -62,7 +66,28 @@
 <script>
 export default {
   name: "login",
-  layout: "auth"
+  layout: "auth",
+  auth: 'guest',
+
+  data() {
+    return {
+      form: {
+        email: undefined,
+        password: undefined,
+        device_name: 'front',
+      }
+    }
+  },
+
+  methods: {
+    async login() {
+      try {
+        let response = await this.$auth.loginWith('laravelJWT', {data: this.form})
+        this.$router.push('/');
+      } catch (err) {
+      }
+    },
+  }
 }
 </script>
 
