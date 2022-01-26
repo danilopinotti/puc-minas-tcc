@@ -70,6 +70,9 @@ export default {
 
           this.packageResponse = response.data;
         })
+        .catch(() => {
+          this.$toast.error('Pacote não encontrado!');
+        })
         .finally(() => {
           this.isLoading = false;
         })

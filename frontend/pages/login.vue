@@ -84,7 +84,9 @@ export default {
       try {
         let response = await this.$auth.loginWith('laravelJWT', {data: this.form})
         this.$router.push('/');
+        this.$toast.success('Você foi autenticado com sucesso!');
       } catch (err) {
+        this.$toast.error('Credenciais inválidas! Por favor, tente novamente.');
       }
     },
   }

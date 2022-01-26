@@ -86,6 +86,7 @@ export default {
       this.$nuxt.$loading.finish();
       this.headerKey++;
       this.$router.push('/');
+      this.$toast.success('Você foi deslogado com sucesso!');
     }
   },
 }
