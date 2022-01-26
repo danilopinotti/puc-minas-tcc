@@ -58,7 +58,7 @@
               <h3 class="text-lg md:text-xl font-semibold mb-2">Crescimento</h3>
               <p class="text-gray-500 mb-2">Nulla sit amet dui in erat ultrices ornare vel eget metus.</p>
               <a href="#"
-                 class="text-indigo-500 hover:text-indigo-600 active:text-indigo-700 font-bold transition duration-100">More</a>
+                 class="text-indigo-500 hover:text-indigo-600 active:text-indigo-700 font-bold transition duration-100">Veja mais</a>
             </div>
           </div>
 
@@ -76,7 +76,7 @@
               <h3 class="text-lg md:text-xl font-semibold mb-2">Segurança</h3>
               <p class="text-gray-500 mb-2">Nulla sit amet dui in erat ultrices ornare vel eget metus.</p>
               <a href="#"
-                 class="text-indigo-500 hover:text-indigo-600 active:text-indigo-700 font-bold transition duration-100">More</a>
+                 class="text-indigo-500 hover:text-indigo-600 active:text-indigo-700 font-bold transition duration-100">Veja mais</a>
             </div>
           </div>
           <div class="flex gap-4 md:gap-6">
@@ -93,7 +93,7 @@
               <h3 class="text-lg md:text-xl font-semibold mb-2">Cloud</h3>
               <p class="text-gray-500 mb-2">Nulla sit amet dui in erat ultrices ornare vel eget metus.</p>
               <a href="#"
-                 class="text-indigo-500 hover:text-indigo-600 active:text-indigo-700 font-bold transition duration-100">More</a>
+                 class="text-indigo-500 hover:text-indigo-600 active:text-indigo-700 font-bold transition duration-100">Veja mais</a>
             </div>
           </div>
           <div class="flex gap-4 md:gap-6">
@@ -109,7 +109,7 @@
               <h3 class="text-lg md:text-xl font-semibold mb-2">Velocidade</h3>
               <p class="text-gray-500 mb-2">Nulla sit amet dui in erat ultrices ornare vel eget metus.</p>
               <a href="#"
-                 class="text-indigo-500 hover:text-indigo-600 active:text-indigo-700 font-bold transition duration-100">More</a>
+                 class="text-indigo-500 hover:text-indigo-600 active:text-indigo-700 font-bold transition duration-100">Veja mais</a>
             </div>
           </div>
 
@@ -127,7 +127,7 @@
               <h3 class="text-lg md:text-xl font-semibold mb-2">Parceiros</h3>
               <p class="text-gray-500 mb-2">Nulla sit amet dui in erat ultrices ornare vel eget metus.</p>
               <a href="#"
-                 class="text-indigo-500 hover:text-indigo-600 active:text-indigo-700 font-bold transition duration-100">More</a>
+                 class="text-indigo-500 hover:text-indigo-600 active:text-indigo-700 font-bold transition duration-100">Veja mais</a>
             </div>
           </div>
 
@@ -145,7 +145,7 @@
               <h3 class="text-lg md:text-xl font-semibold mb-2">Suporte 24/7</h3>
               <p class="text-gray-500 mb-2">Nulla sit amet dui in erat ultrices ornare vel eget metus.</p>
               <a href="#"
-                 class="text-indigo-500 hover:text-indigo-600 active:text-indigo-700 font-bold transition duration-100">More</a>
+                 class="text-indigo-500 hover:text-indigo-600 active:text-indigo-700 font-bold transition duration-100">Veja mais</a>
             </div>
           </div>
         </div>
