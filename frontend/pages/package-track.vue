@@ -53,7 +53,7 @@ export default {
   data() {
     return {
       isLoading: false,
-      packageCode: undefined,
+      packageCode: 'CU6TI4-NJ',
       packageResponse: undefined,
     }
   },
