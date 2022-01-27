@@ -1,6 +1,6 @@
 # GSL - Front-end
 
-Pasta contendo o projeto de front-end (views) para o sistema GSL Boa Entrega
+Pasta contendo o projeto de front-end (views) para o sistema GSL Boa Entrega.
 
 Principais tecnologias utilizadas:
 - Vue 2
@@ -24,3 +24,6 @@ $ npm run start
 # gerar projeto estático
 $ npm run generate
 ```
+
+## Imagens
+A seguir, algumas imagens do projeto. Mais imagens podem ser encontradas na pasta `prints`.
