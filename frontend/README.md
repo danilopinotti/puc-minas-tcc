@@ -26,4 +26,10 @@ $ npm run generate
 ```
 
 ## Imagens
-A seguir, algumas imagens do projeto. Mais imagens podem ser encontradas na pasta `prints`.
+A seguir, algumas imagens do projeto. As imagens podem ser encontradas na pasta `prints`.
+
+![Página Inicial](https://github.com/danilopinotti/puc-minas-tcc/raw/master/frontend/prints/01.png)
+![Rastreio de Pacotes](https://github.com/danilopinotti/puc-minas-tcc/raw/master/frontend/prints/02.png)
+![Cálculo de Frete](https://github.com/danilopinotti/puc-minas-tcc/raw/master/frontend/prints/03.png)
+![Página de Login](https://github.com/danilopinotti/puc-minas-tcc/raw/master/frontend/prints/04.png)
+![Lista de Fornecedores](https://github.com/danilopinotti/puc-minas-tcc/raw/master/frontend/prints/05.png)
